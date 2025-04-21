@@ -1,5 +1,8 @@
 # Ex.No:1a  			Study of Socket Programming
 
+Register Number: 212223040069
+
+Name: Iyalarasu C
 ## Aim: 
 To perform a study on Socket Programming
 ## Introduction:
@@ -53,42 +56,42 @@ Socket programming finds applications in various domains, including web developm
 4.	Networked Games: Online multiplayer games rely on socket programming to facilitate communication between game clients and servers.
 5.	RPC mechanisms: which allow processes to execute code on a remote server, often use socket programming for communication.
 
-## Programs
+## Program:
 
-### Server
-```python
+## Client:
+```
 import socket
-from datetime import datetime
 s=socket.socket()
 s.bind(('localhost',8000))
 s.listen(5)
 c,addr=s.accept()
-print("Client Address : ",addr)
-now = datetime.now()
-c.send(now.strftime("%d/%m/%Y %H:%M:%S").encode())
+while True:
+i=input("Enter a data: ")
+Thus the study of Socket Programming Completed Successfully
+c.send(i.encode())
 ack=c.recv(1024).decode()
 if ack:
- print(ack)
+print(ack)
+continue
+else:
 c.close()
+break
 ```
-
-### Client
-```python
-import socket
+## Server:
+```
+ import socket
 s=socket.socket()
 s.connect(('localhost',8000))
-print(s.getsockname())
+while True:
 print(s.recv(1024).decode())
-s.send("acknowledgement recived from the server".encode())
+s.send("Acknowledgement Recived".encode())
 ```
+## Output:
+## Client:
+![image](https://github.com/Ragupathi1/SocketStudy/assets/143526042/62be0e07-a518-4731-8f06-8460d1937b51)
 
-## Output
-
-### Client
-![alt text](<Screenshot 2024-08-21 153125.png>)
-
-### Server
-![alt text](<Screenshot 2024-08-21 153206.png>)
+## Server
+![image](https://github.com/Ragupathi1/SocketStudy/assets/143526042/8bf8c265-9082-4e89-b9d0-50e04d658be3)
 
 ## Result:
 Thus the study of Socket Programming Completed Successfully
